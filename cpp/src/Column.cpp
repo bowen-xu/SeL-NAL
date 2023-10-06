@@ -1,7 +1,7 @@
 #include <pybind11/pybind11.h>
-#include "SequentialGroup/include/Column.h"
-#include "SequentialGroup/include/Column.inl"
-#include "SequentialGroup/include/Group.h"
+#include "include/Column.h"
+#include "include/Column.inl"
+#include "include/Group.h"
 // #include "NAL/Functions/include/TruthFunctions.h"
 #include "helpers.hpp"
 #include <numeric>

@@ -1,7 +1,7 @@
-#include "SequentialGroup/include/Link.h"
-#include "SequentialGroup/include/Node.h"
-#include "SequentialGroup/include/Link.inl"
-#include "SequentialGroup/include/Node.inl"
+#include "include/Link.h"
+#include "include/Node.h"
+#include "include/Link.inl"
+#include "include/Node.inl"
 // #include "Interpreter/include/Interpreter.hpp"
 #include <fmt/core.h>
 

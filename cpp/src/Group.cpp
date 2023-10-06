@@ -3,9 +3,9 @@
 #include <algorithm>
 #include <tuple>
 
-#include "SequentialGroup/include/Group.h"
-#include "SequentialGroup/include/Buffer.h"
-#include "SequentialGroup/include/Node.h"
+#include "include/Group.h"
+#include "include/Buffer.h"
+#include "include/Node.h"
 
 using namespace GROUP;
 // using BOOLEAN_FUNCTIONS::Or;

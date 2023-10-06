@@ -4,8 +4,8 @@
 #include <functional>
 #include <iostream>
 #include <string>
-#include "SequentialGroup/include/Group.h"
-#include "SequentialGroup/include/Bundle.h"
+#include "include/Group.h"
+#include "include/Bundle.h"
 #include <chrono>
 // #include "cNARS/Narsese/include/Narsese.h"
 // #include "cNARS/Narsese/Parser/NarseseParser.h"

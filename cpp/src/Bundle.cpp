@@ -3,17 +3,17 @@
 #include <vector>
 #include <memory>
 #include <string>
-#include "SequentialGroup/include/Node.h"
-#include "SequentialGroup/include/Link.h"
-#include "SequentialGroup/include/Node.inl"
-#include "SequentialGroup/include/Link.inl"
+#include "include/Node.h"
+#include "include/Link.h"
+#include "include/Node.inl"
+#include "include/Link.inl"
 // #include "Interpreter/include/Interpreter.hpp"
 // #include "NAL/Functions/include/TruthFunctions.h"
 // #include "Narsese/include/Narsese.h"
 #include <fmt/core.h>
 #include <iostream>
-#include "SequentialGroup/include/Group.h"
-#include "SequentialGroup/include/Bundle.h"
+#include "include/Group.h"
+#include "include/Bundle.h"
 
 using namespace BUNDLE;
 namespace py = pybind11;

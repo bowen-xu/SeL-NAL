@@ -8,6 +8,15 @@ This project is python-C++ mixed.
 The C++ code is compiled by `g++23`; older C++ standards (*e.g.*, `g++11`) and other compilers (*e.g.*, `clang`) are not ensured to work.
 There would be two target folders, `./narsese` and `./SequentialGroup`, which are also two python modules.
 
+To compile the C++ code, run the commands as the following
+```
+git submodule update --init --recursive
+mkdir build
+cd build
+cmake ..
+make
+```
+
 ## Run
 
 To test the capacity of the model, run the command

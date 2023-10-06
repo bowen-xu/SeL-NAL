@@ -57,7 +57,7 @@ include_directories(
 # message(SOURCES_NARSESE=${SOURCES_NARSESE})
 # pybind11_add_module(Foo ${SOURCES_BODHI} ${SOURCES_NARSESE} ${SOURCES_UTILS} ${SOURCES_PARSER} ${SOURCES_CONFIG} ${SOURCES_INTERPRETER})
 file(GLOB SOURCES_SEQUENTIAL_GROUP
-    Bodhi/Models/SequentialGroup/src/*.cpp
+    cpp/src/*.cpp
 )
 
 # file(GLOB SOURCES_NARSESE Bodhi/cNARS/Narsese/src/*.cpp)

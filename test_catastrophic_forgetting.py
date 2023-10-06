@@ -1,5 +1,5 @@
-from pyBodhi.SequentialGroup import Column, Group, Node, Link
-from Experiments.SequentialLearning.dataset import generate_dataset as _generate_dataset
+from .SequentialGroup import Column, Group, Node, Link
+from .utils.dataset import generate_dataset as _generate_dataset
 from pathlib import Path
 import pickle
 import numpy as np
@@ -7,9 +7,9 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import matplotlib.animation as animation
 from tqdm import tqdm
-from pyBodhi.SequentialGroup.Profiler import Profiler
+from .utils.Profiler import Profiler
 from typing import Set
-from draw_group import draw_group
+from .utils.draw_group import draw_group
 
 np.random.seed(137)
 sparse_rate = 1.00  # 0.05

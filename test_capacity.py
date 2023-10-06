@@ -1,4 +1,4 @@
-from pyBodhi.SequentialGroup import Column, Group, Node, Link
+from .SequentialGroup import Column, Group, Node, Link
 from utils.dataset import generate_dataset as _generate_dataset
 from pathlib import Path
 import pickle
@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import matplotlib.animation as animation
 from tqdm import tqdm
-from pyBodhi.SequentialGroup.Profiler import Profiler
+from .utils.Profiler import Profiler
 from typing import Set
 from utils.draw_group import draw_group
 

@@ -60,6 +60,8 @@ target_link_libraries(SequentialGroup PRIVATE fmt::fmt)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 
 # message("================")
+# set(PACKAGE_NAME ".")
+
 # libraries
 set(SLM_PACKAGE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 file(WRITE "${SLM_PACKAGE_DIR}/__init__.py" "")
@@ -98,9 +100,7 @@ function(add_module MODULE_NAME)
     file(WRITE "${SLM_PACKAGE_DIR}/${MODULE_NAME}/__init__.py" "from .${MODULE_NAME} import *\n")
 endfunction()
 
-# add_module(Foo)
 add_module(SequentialGroup)
-
 add_module(narsese)
 
 target_link_libraries(SequentialGroup PRIVATE fmt::fmt)
@@ -110,12 +110,14 @@ message("================")
 
 # generate stub files
 message(PROJECT_SOURCE_DIR=${PROJECT_SOURCE_DIR})
-message(PACKAGE_NAME=${PACKAGE_NAME})
+# message(PACKAGE_NAME=${PACKAGE_NAME})
 add_custom_target(GENERATE_PYI ALL
     COMMENT "Trying to generate .pyi files ..."
     WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
     COMMAND pwd
-    COMMAND python generate_stub.py -p ${PACKAGE_NAME}
+    # COMMAND python generate_stub.py -p ${PACKAGE_NAME}
+    COMMAND python generate_stub.py -p "narsese"
+    COMMAND python generate_stub.py -p "SequentialGroup"
 )
 
 add_dependencies(SequentialGroup narsese)

@@ -5,6 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: generate_stub.py",
+            "type": "python",
+            "request": "launch",
+            "program": "generate_stub.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "-p",
+                "SequentialGroup"
+            ]
+        },
+        {
             "name": "Python C++ Mixed",
             "type": "pythoncpp",
             "request": "launch",

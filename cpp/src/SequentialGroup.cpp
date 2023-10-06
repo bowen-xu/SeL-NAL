@@ -87,9 +87,9 @@ PYBIND11_MODULE(SequentialGroup, m)
     m.doc() = R"pbdoc(
         SequentialGroup module
     )pbdoc";
-    py::module_::import("pyBodhi.narsese");
-    volatile auto narsese = py::module_::import("pyBodhi.narsese");
-    m.attr("narsese") = py::module_::import("pyBodhi.narsese");
+    // py::module_::import("narsese");
+    // volatile auto narsese = py::module_::import("narsese");
+    // m.attr("narsese") = py::module_::import("narsese");
     m.def("test", &test);
     auto pyNode = py::class_<NODE::Node, NODE::pNode>(m, "Node");
     auto pyLink = py::class_<LINK::Link, LINK::pLink>(m, "Link");

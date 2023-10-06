@@ -6,7 +6,7 @@ This repo contains the source code of the paper *A Brain-inspired Sequential Lea
 
 This project is python-C++ mixed.
 The C++ code is compiled by `g++23`; older C++ standards (*e.g.*, `g++11`) and other compilers (*e.g.*, `clang`) are not ensured to work.
-There would be two targets folders, `./narsese` and `./SequentialGroup`, which are also two python modules.
+There would be two target folders, `./narsese` and `./SequentialGroup`, which are also two python modules.
 
 ## Run
 

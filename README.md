@@ -37,6 +37,19 @@ Python-C++ mixed debugging is avaiable in VS-Code. To do so, the extension `Pyth
 
 To enter a C++ file, a break point should be set up before debugging.
 
+## Performance
+
+### Capacity
+
+![](Figures/Capacity/svgs/Accuracy-length=5-n_patterns=5-n_types=26-n_nodes=10.svg)
+length=5, n_patterns=5, n_types=26
+
+![](Figures/Capacity/svgs/Accuracy-length=14-n_patterns=20-n_types=26-n_nodes=10.svg)
+length=14, n_patterns=20, n_types=26
+
+![](Figures/Capacity/svgs/Accuracy-length=14-n_patterns=20-n_types=1000-n_nodes=10.svg)
+length=14, n_patterns=20, n_types=1000
+
 ## Cite
 
 bibtex:

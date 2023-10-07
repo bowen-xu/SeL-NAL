@@ -60,7 +60,7 @@ def test_capacity(length, number, n_nodes=16, n_chars=26, observe_all=True, loos
     g.thresh = 0.8
     g.p_plus = 2#1.95
     g.p_minus = 0.99#0.9
-    g.p_minus2 = 0.00
+    g.p_minus2 = 0.001
 
     for idx, column in enumerate(g.columns):
         column.mark = idx

@@ -8,22 +8,24 @@ def generate_dataset(seqs, n_train=10000, n_test=10000, seed=137, exclude_sample
     cache_root = Path(cache_root)
     cache_root.mkdir(parents=True, exist_ok=True)
     s = f"{n_train}, {n_test}, seqs={seqs}, n_chars={n_chars}"
-    # 获取字符串的哈希值
+    # get hash-value of seqs
     md5_hash = hashlib.md5()
     md5_hash.update(s.encode('utf-8'))
     hash_hex = md5_hash.hexdigest()
     hash_value = int(hash_hex, 16)
-    # 以此哈希值作为文件名称
+    # the hash-value is part of the file's name
     filepath = cache_root/(str(hash_value)+".pkl")
+    
+    dictionary = {ele: i for i, ele in enumerate(set([ele for seq in seqs for ele in seq]))}
+    n_chars = max(n_chars, len(dictionary))
     if not filepath.exists() or regenerate:
         np.random.seed(seed)
-        samples = OrderedSet([chr(i) for i in range(65, 65+n_chars)])
+        samples = OrderedSet([i for i in range(n_chars)])
         if exclude_sample:
-            samples_seqs = set()
-            for seq in seqs:
-                samples_seqs |= set(seq)
+            samples_seqs = set(dictionary.keys())
             samples -= samples_seqs
-
+        seqs = [[dictionary[ele] for ele in seq] for seq in seqs]
+        # print(seqs)
         def produce_sequence(seqs, n=10000):
             sequence = []
             for _ in range(n):
@@ -44,4 +46,4 @@ def generate_dataset(seqs, n_train=10000, n_test=10000, seed=137, exclude_sample
             D_train = Dataset["D_train"]
             D_test = Dataset["D_test"] 
 
-    return D_train, D_test
+    return D_train, D_test, dictionary

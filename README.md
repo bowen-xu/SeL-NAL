@@ -29,6 +29,8 @@ To test the catastrophic forgetting phenomenon of the model, run the command
 python -m test_catastrophic_forgetting
 ```
 
+Run the jupyter-notebook `tests.ipynb` to get all related figures from tests.
+
 ## Debug
 
 Python-C++ mixed debugging is avaiable in VS-Code. To do so, the extension `Python C++ Debugger` is needed. Select the task "Python C++ Mixed" in `.vscode/launch.json`, and run and debug.

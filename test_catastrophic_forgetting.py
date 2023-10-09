@@ -40,7 +40,7 @@ def generate_dataset(length: int=4, number: int=2, n_train=1000, n_test=1000, n_
 
 
 
-def test_capacity(length, number, n_nodes=16, n_chars=26, observe_all=True, n_patterns=3):
+def test_catastrophic_forgetting(length, number, n_nodes=16, n_chars=26, observe_all=True, n_patterns=3, n_periods=5):
     ''''''
 
     # Create the model
@@ -49,26 +49,16 @@ def test_capacity(length, number, n_nodes=16, n_chars=26, observe_all=True, n_pa
     g.thresh = 0.8
     g.p_plus = 2#1.95
     g.p_minus = 0.99#0.9
-    g.p_minus2 = 0.00
+    g.p_minus2 = 0.001
 
     for idx, column in enumerate(g.columns):
         column.mark = idx
-
-    # for j, column in enumerate(g.columns):
-    #     for i, node in enumerate(column.nodes):
-    #         random_matrix = np.random.rand(g.n_nodes, g.n_columns)
-    #         sparse_matrix = random_matrix < sparse_rate
-    #         sparse_matrix[i, j] = False
-    #         for i_node, i_column in zip(*np.where(sparse_matrix)):
-    #             pv = np.random.normal(mu, sigma)
-    #             g[i_column, i_node].connect_to(node, pv)
-    
 
     accuracies = []
     n_anticipations = []
     profiler = Profiler(100)
     datasets = {}
-    for _ in range(5):
+    for _ in range(n_periods):
         for i_pattern in range(n_patterns):
             # Prepare the dataset
             root_cache = Path('./cache')
@@ -84,16 +74,11 @@ def test_capacity(length, number, n_nodes=16, n_chars=26, observe_all=True, n_pa
                     with open(file_cache, "rb") as f:
                         D_train, D_test = pickle.load(f)
                 
-
                 datasets[file_cache] = [D_train, n_data]
                 data = D_train[:n_data]
             else:
                 D_train, cnt = datasets[file_cache]
                 data = D_train[cnt:cnt+n_data]
-
-            # print(len(data))
-            # print(data[:20])
-
 
             duration = length*2-2
 
@@ -115,7 +100,7 @@ def test_capacity(length, number, n_nodes=16, n_chars=26, observe_all=True, n_pa
     return accuracies, g
 
 pair = (10, 10)
-accuracies, g = test_capacity(*pair, 16, observe_all=True, n_patterns=10)
+accuracies, g = test_catastrophic_forgetting(*pair, 16, observe_all=True, n_patterns=10)
 plt.figure()
 plt.plot(accuracies)
 draw_group(g)

@@ -1,6 +1,6 @@
 # SeL-NAL
 
-This repo contains the source code of the paper *A Brain-inspired Sequential Learning Model based on Non-Axiomatic Logic*.
+This repo contains the source code of the paper *A Brain-inspired Sequence Learning Model based on Non-Axiomatic Logic*.
 
 ## Compilation
 

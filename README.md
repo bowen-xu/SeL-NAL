@@ -55,18 +55,18 @@ length=14, n_patterns=20, n_types=1000
 ![](Figures/CatastrophicForgetting/svgs/Accuracy-length=10-n_patterns=10-n_types=26-n_nodes=16-n_repeats=3-n_episodes=3.svg)
 length=10, n_patterns=10, n_types=26, n_repeats=3, n_episods=3
 
-## Cite
+## Citation
 
-bibtex:
-TBA
-<!-- ```bibtex
-@software{Lisa_My_Research_Software_2017,
-  author = {Lisa, Mona and Bot, Hew},
-  doi = {10.5281/zenodo.1234},
-  month = {12},
-  title = {{My Research Software}},
-  url = {https://github.com/github-linguist/linguist},
-  version = {2.0.4},
-  year = {2017}
+This work is still under peer review. 
+
+Preprint version:
+
+```bibtex
+@article{xu2023selnal,
+  title={A Brain-Inspired Sequence Learning Model based on a Logic},
+  author={Xu, Bowen},
+  journal={arXiv preprint 	arXiv:2308.12486},
+  year={2023}
 }
-``` -->
+```
+(bibtex)

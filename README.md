@@ -59,13 +59,13 @@ length=10, n_patterns=10, n_types=26, n_repeats=3, n_episods=3
 
 This work is still under peer review. 
 
-Preprint version:
+Cite as
 
 ```bibtex
 @article{xu2023selnal,
   title={A Brain-Inspired Sequence Learning Model based on a Logic},
   author={Xu, Bowen},
-  journal={arXiv preprint 	arXiv:2308.12486},
+  journal={arXiv preprint arXiv:2308.12486},
   year={2023}
 }
 ```

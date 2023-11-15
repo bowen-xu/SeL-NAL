@@ -74,11 +74,7 @@ std::set<pNode> &Group::activate(size_t i_column)
     /* 更新node的状态 */
     for (auto &node : nodes)
     {
-        if (node->ts_update == this->ts - 1)
-            node->roll_state();
-        else if (node->ts_update < this->ts - 1)
-            node->reset_state();
-        node->ts_update = ts;
+        node->update(this->ts);
     }
     /* 激活结点。首先判断是否存在预激活的结点，如果存在，则激活那些结点；否则激活所有结点。 */
     bool anticipated = std::any_of(
@@ -272,7 +268,7 @@ void Group::learn(size_t i_column)
 
     if (nodes_selected.size() == 0)
     {
-        /* 如果没有任何激活的结点，则从现有的激活结点中，选取一个value最大的结点进行学习。 */
+        /* 如果没有任何预测后激活的结点，则从现有的激活结点中，选取一个value最大的结点进行学习。 */
         double value_max = 0.0;
         for (pNode &post_node : nodes)
             for (auto &[ante_node, ante_link] : post_node->ante_links->links)
@@ -332,6 +328,7 @@ void Group::learn(size_t i_column)
             }
         }
     }
+    
     for (auto &post_node : this->buffer2)
     {
         // auto n = post_node->ante_links->links.size();

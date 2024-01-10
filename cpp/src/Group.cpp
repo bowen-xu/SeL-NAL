@@ -359,10 +359,10 @@ void GROUP::pybind_group(py::module &m)
     auto pyClass_ = py::reinterpret_borrow<classType>(pyObj_);
 
     pyClass_
-        .def(py::init(&Group::create))
-        .def("activate", &Group::activate)
+        .def(py::init(&Group::create), py::arg("n_columns"), py::arg("n_nodes"))
+        .def("activate", &Group::activate, py::arg("i_column"))
         .def_static("build_links", [](vector<pNode> &nodes1, vector<pNode> &nodes2)
-                    { Group::build_links(nodes1, nodes2); })
+                    { Group::build_links(nodes1, nodes2); }, py::arg("nodes1"), py::arg("nodes2"))
         .def_readonly("ts", &Group::ts)
         .def(
             "nop",

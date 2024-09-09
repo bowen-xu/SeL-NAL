@@ -1,6 +1,6 @@
 try:
     from ..SequentialGroup import Group, Column, Node, Link, Bundle
-except ValueError as e:
+except:
     from SequentialGroup import Group, Column, Node, Link, Bundle
 from typing import List
 import networkx as nx

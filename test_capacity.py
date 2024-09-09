@@ -32,11 +32,11 @@ def generate_dataset(length: int=4, number: int=2, n_train=1000, n_test=1000, n_
         samples = OrderedSet([chr(i) for i in range(65, n_chars+65)])
         seq = list(np.random.choice(samples, length))
         seqs.append(seq)
-    D_train, D_test = _generate_dataset(seqs, n_train, n_test, n_chars=n_chars)
-    _bias = ord('A')
-    D_train = [ord(c)-_bias for c in D_train]
-    D_test = [ord(c)-_bias for c in D_test]
-    return D_train, D_test
+    D_train, D_test, _dictionary = _generate_dataset(seqs, n_train, n_test, n_chars=n_chars)
+    # _bias = ord('A')
+    # D_train = [ord(c)-_bias for c in D_train]
+    # D_test = [ord(c)-_bias for c in D_test]
+    return D_train, D_test, _dictionary
 
 
 
@@ -45,14 +45,14 @@ def test_capacity(length, number, n_nodes=16, n_chars=26, observe_all=True, loos
     # Prepare the dataset
     root_cache = Path('./cache')
     root_cache.mkdir(parents=True, exist_ok=True)
-    file_cache = root_cache/f"daatset_capacity-test_{length}_{number}_{n_chars}.pkl"
+    file_cache = root_cache/f"dataset_capacity-test_{length}_{number}_{n_chars}.pkl"
     if not file_cache.exists():
-        D_train, D_test = generate_dataset(length, number, n_chars=n_chars, n_train=length*number*200)
+        D_train, D_test, _dictionary  = generate_dataset(length, number, n_chars=n_chars, n_train=length*number*200)
         with open(file_cache, 'wb') as f:
-            pickle.dump((D_train, D_test), f)
+            pickle.dump((D_train, D_test, _dictionary), f)
     else:
         with open(file_cache, "rb") as f:
-            D_train, D_test = pickle.load(f)
+            D_train, D_test, _dictionary = pickle.load(f)
     
     # Create the model
     chars = [chr(i) for i in range(65,65+n_chars)]
@@ -101,5 +101,5 @@ plt.figure()
 plt.title(f"length={pair[0]}, #sequences={pair[1]}")
 plt.plot(accuracies)
 plt.axhline(0.5, c='r', alpha=0.5)
-draw_group(g)
+# draw_group(g)
 plt.show()

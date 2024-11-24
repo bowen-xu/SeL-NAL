@@ -5,7 +5,7 @@ This repo contains the source code of the paper *A Brain-inspired Sequence Learn
 ## Compilation
 
 This project is python-C++ mixed.
-The C++ code is compiled by `g++23`; older C++ standards (*e.g.*, `g++11`) and other compilers (*e.g.*, `clang`) are not ensured to work.
+The C++ code is compiled by `g++`, with the standerd `C++20`; older C++ standards (*e.g.*, `c++11`) and other compilers (*e.g.*, `clang`) are not ensured to work.
 
 To compile the C++ code, run the commands as the following
 ```
@@ -50,7 +50,7 @@ length=14, n_patterns=20, n_types=26
 ![](Figures/Capacity/svgs/Accuracy-length=14-n_patterns=20-n_types=1000-n_nodes=10.svg)
 length=14, n_patterns=20, n_types=1000
 
-### Catastrophic Forgetting
+### Continual Learning (without Catastrophic Forgetting)
 
 ![](Figures/CatastrophicForgetting/svgs/Accuracy-length=10-n_patterns=10-n_types=26-n_nodes=16-n_repeats=3-n_episodes=3.svg)
 length=10, n_patterns=10, n_types=26, n_repeats=3, n_episods=3

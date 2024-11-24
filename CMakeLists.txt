@@ -15,7 +15,7 @@ endforeach()
 # C++ settings
 set(CMAKE_CXX_COMPILER "g++")
 set(CMAKE_SH "CMAKE_SH-NOTFOUND")
-set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 20)
 
 set(CMAKE_BUILD_TYPE Debug)
 # set(CMAKE_BUILD_TYPE Release)

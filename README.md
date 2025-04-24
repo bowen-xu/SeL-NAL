@@ -29,7 +29,7 @@ To test the catastrophic forgetting phenomenon of the model, run the command
 python -m test_catastrophic_forgetting
 ```
 
-Run the jupyter-notebook `tests.ipynb` to get all related figures from tests.
+Run the jupyter-notebook `tests.ipynb` to get all related figures.
 
 ## Debug
 
@@ -62,11 +62,16 @@ This work is still under peer review.
 Cite as
 
 ```bibtex
-@article{xu2023selnal,
-  title={A Brain-Inspired Sequence Learning Model based on a Logic},
+@article{xu2025sel,
+  title={A brain-inspired sequence learning model based on a logic},
   author={Xu, Bowen},
-  journal={arXiv preprint arXiv:2308.12486},
-  year={2023}
+  journal={Scientific Reports},
+  volume={15},
+  number={1},
+  pages={13573},
+  year={2025},
+  publisher={Nature Publishing Group UK London},
+  doi = {10.1038/s41598-025-97777-8}
 }
 ```
 (bibtex)
